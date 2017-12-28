@@ -21,9 +21,10 @@
 					
 // Wifi definitions
 // Array with SSID and password records. Set WPA size to number of entries in array
-#define WPASIZE 1
+#define WPASIZE 2
 static char *wpa[WPASIZE][2] = {
-  { "nodeMCU", "Dd12345678"}
+  { "nodeMCU", "Dd12345678"},
+  { "nodeteste", "Dd12345678"}
 };
 
 // Set the Server Settings
@@ -37,18 +38,18 @@ static char *wpa[WPASIZE][2] = {
 // MQTT definitions
 #define _TTNPORT 1700
 //#define _TTNSERVER "router.eu.staging.thethings.network"
-#define _TTNSERVER "router.us.thethings.network" //DJL "router.eu.thethings.network"
+#define _TTNSERVER "router.eu.thethings.network" //DJL "router.eu.thethings.network"
 
 // Port is UDP port in this program
-#define _THINGPORT 1701							// dash.things4u.eu
+#define _THINGPORT 1700							// dash.things4u.eu
 //#define _THINGSERVER "yourserver.com"			// Server URL of the LoRa-udp.js program
 
 // Gateway Ident definitions
 #define _DESCRIPTION "ESP Gateway"
 #define _EMAIL "youremail@gmail.com"
 #define _PLATFORM "ESP8266"
-#define _LAT 32.00000
-#define _LON -117.00000
+#define _LAT 41.157944 
+#define _LON -8.629105
 #define _ALT 0
 
 								
@@ -60,7 +61,7 @@ static char *wpa[WPASIZE][2] = {
 #define _BAUDRATE 115200		// Works for debug messages to serial momitor (if attached).
 
 // ntp
-#define NTP_TIMESERVER "us.pool.ntp.org"	// Country and region specific
+#define NTP_TIMESERVER "pt.pool.ntp.org"	// Country and region specific
 #define NTP_TIMEZONES	-8		// How far is our Timezone from UTC (excl daylight saving/summer time)
 #define SECS_PER_HOUR	3600
 

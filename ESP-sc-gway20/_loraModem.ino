@@ -60,10 +60,10 @@ void unselectreceiver()
 byte readRegister(byte addr)
 {
     selectreceiver();
-	SPI.beginTransaction(SPISettings(50000, MSBFIRST, SPI_MODE0));
-	SPI.transfer(addr & 0x7F);
-	uint8_t res = SPI.transfer(0x00);
-	SPI.endTransaction();
+  	SPI.beginTransaction(SPISettings(50000, MSBFIRST, SPI_MODE0));
+  	SPI.transfer(addr & 0x7F);
+	  uint8_t res = SPI.transfer(0x00);
+	  SPI.endTransaction();
     unselectreceiver();
     return res;
 }
@@ -80,10 +80,10 @@ void writeRegister(byte addr, byte value)
     spibuf[0] = addr | 0x80;
     spibuf[1] = value;
     selectreceiver();
-	SPI.beginTransaction(SPISettings(50000, MSBFIRST, SPI_MODE0));
-	SPI.transfer(spibuf[0]);
-	SPI.transfer(spibuf[1]);
-	SPI.endTransaction();
+	  SPI.beginTransaction(SPISettings(50000, MSBFIRST, SPI_MODE0));
+  	SPI.transfer(spibuf[0]);
+  	SPI.transfer(spibuf[1]);
+  	SPI.endTransaction();
     unselectreceiver();
 }
 
@@ -495,7 +495,7 @@ static void initLoraModem()
     delay(100);
 	
     byte version = readRegister(REG_VERSION);					// Read the LoRa chip version id
-    if (version == 0x22) {
+    if (version == 0xFF) {
         // sx1272
         Serial.println(F("WARNING:: SX1272 detected"));
         sx1272 = true;

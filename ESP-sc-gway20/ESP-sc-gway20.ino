@@ -164,7 +164,7 @@ void printDigits(int digits)
   // utility function for digital clock display: prints preceding colon and leading 0
   if (digits < 10)
     Serial.print(F("0"));
-  Serial.print(digits);
+    Serial.print(digits);
 }
 
 
@@ -845,10 +845,13 @@ void loop ()
     yield();
     // rxpk PUSH_DATA received from node is rxpk (*2, par. 3.2)
     sendUdp(buff_up, buff_index);					// We can send to multiple sockets if necessary
+     Serial.println(F(" LoRa message received"));
 
   }
   else {
     // No LoRa message received
+     Serial.println(F("No LoRa message received"));
+
   }
 
   yield();

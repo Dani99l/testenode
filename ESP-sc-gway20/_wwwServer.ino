@@ -158,7 +158,6 @@ String WifiServer(char *cmd, char *arg) {
 	response +="<tr>";
 	response +="<th style=\"background-color: green; color: white;\">Parameter</th>";
 	response +="<th style=\"background-color: green; color: white;\">Value</th>";
-	response +="</tr>";
 	response +="<tr><td style=\"border: 1px solid black;\">Free heap</td><td style=\"border: 1px solid black;\">"; response+=ESP.getFreeHeap(); response+="</tr>";
 	response +="<tr><td style=\"border: 1px solid black;\">ESP Chip ID</td><td style=\"border: 1px solid black;\">"; response+=ESP.getChipId(); response+="</tr>";
 	response +="</table>";
